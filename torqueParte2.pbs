@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#PBS -N JavierAcevedo28
+#PBS -l nodes=1:ppn=8:intel
+# PBS -l walltime=:5:00
+#PBS -l mem=2gb
+#PBS -M ja.acevedo12@uniandes.edu.co
+#PBS -m ae
+#PBS -j oe
+#PBS -o out28.log
+
+# cd $PBS_O_WORKDIR
+
+pwd
+cd ja.acevedo12/JavierAcevedo_Ejercicio28
+
+module load gcc/4.9.4
+./homeRun.sh
+python plots.py
+
+
+#cp sample.pdf ..
+# mkdir images
+# mkdir datFiles
+
+# mv -f $TMPDIR/CollisionalDarkMatterSimulation/images/ ./images
+# mv -f $TMPDIR/CollisionalDarkMatterSimulation/datFiles/ ./datFiles
+
+
+
+
+
