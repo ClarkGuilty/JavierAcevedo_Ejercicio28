@@ -1,4 +1,4 @@
-mpicc integra.c -o integra.x
+mpicc integra.c -o integra.x -lm
 touch rta.txt && rm rta.txt
 for N in 2 3 4 5 6 7 8
 do

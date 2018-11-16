@@ -12,7 +12,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-real = 7./6.
+#real = 7./6.
+real = 155./6.
 
 datos = np.loadtxt("rta.txt")
 x = np.power(10,datos[:,0])

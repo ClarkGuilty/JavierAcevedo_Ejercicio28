@@ -3,11 +3,18 @@
 #include <math.h>
 #include "mpi.h"
 #include <time.h>
+#include <math.h>
 
 double func(double x)
 {
     return 1.0 - x*x + x;
 }
+
+double func2(double x0,double x1,double x2,double x3,double x4,double x5,double x6,double x7,double x8,double x9)
+{
+    return pow(x0+x1+x2+x3+x4+x5+x6+x7+x8+x9,2);
+}
+
 
 double inMC(int N, double xmin, double xmax)
 {
@@ -21,6 +28,20 @@ double inMC(int N, double xmin, double xmax)
     }
     return total*(xmax-xmin)/(N*1.0);
 }
+
+double inMC2(int N)//Esta versión solo funciona de 0 a 1 pero es multivariable
+{
+    int i;
+    double total;
+    double x;
+    for(i=0;i<N;i++){
+        x = drand48();
+        //printf("%d %f\n", N,x);
+        total += func2(drand48(),drand48(),drand48(),drand48(),drand48(),drand48(),drand48(),drand48(),drand48(),drand48());
+    }
+    return total/(N*1.0);
+}
+
 
 int main(int argc, char *argv[])
 {
@@ -55,7 +76,8 @@ MPI_Comm_rank(MPI_COMM_WORLD,&rank);
 srand48(rank+time(NULL));
 /* We ask for the name of the node */
 MPI_Get_processor_name(name, &len);
-total = inMC(N/size, 0, 1);
+//total = inMC(N/size, 0, 1);
+total = inMC2(N/size);
 
 //printf("This is my integral: %.16f from rank: %d\n", total,rank);
 MPI_Reduce(&total, &integral, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
