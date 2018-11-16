@@ -31,9 +31,7 @@ MPI_Comm_size(MPI_COMM_WORLD,&size);
 MPI_Comm_rank(MPI_COMM_WORLD,&rank);
 
 /* We ask for the name of the node */
-printf("sirve\n");
 MPI_Get_processor_name(name, &len);
-printf("sirve\n");
 while (true)
 {
 if (rank == 0) {

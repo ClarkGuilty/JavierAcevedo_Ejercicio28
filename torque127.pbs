@@ -1,13 +1,13 @@
 #!/bin/bash
 
-#PBS -N JavierAcevedo27
+#PBS -N JavierAcevedo28
 #PBS -l nodes=1:ppn=8:intel
 # PBS -l walltime=:5:00
 #PBS -l mem=2gb
 #PBS -M ja.acevedo12@uniandes.edu.co
 #PBS -m ae
 #PBS -j oe
-#PBS -o out27.log
+#PBS -o out28.log
 
 # cd $PBS_O_WORKDIR
 
