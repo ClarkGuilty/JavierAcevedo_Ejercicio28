@@ -16,6 +16,7 @@ cd ja.acevedo12/JavierAcevedo_Ejercicio28
 
 module load gcc/4.9.4
 make -f make127
+rm 127.x
 #cp sample.pdf ..
 # mkdir images
 # mkdir datFiles
