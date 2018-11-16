@@ -12,10 +12,10 @@
 # cd $PBS_O_WORKDIR
 
 pwd
-cd ja.acevedo12/JavierAcevedo_Ejercicio27
+cd ja.acevedo12/JavierAcevedo_Ejercicio28
 
 module load gcc/4.9.4
-make -f make123
+make -f make127
 #cp sample.pdf ..
 # mkdir images
 # mkdir datFiles
