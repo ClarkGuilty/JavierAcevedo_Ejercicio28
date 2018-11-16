@@ -1,0 +1,4 @@
+all:
+	mpicc 127.c -o 127.x
+	mpirun -np 2 ./127.x
+	rm 127.x
