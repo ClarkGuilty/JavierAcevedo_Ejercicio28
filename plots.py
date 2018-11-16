@@ -8,6 +8,8 @@ Created on Fri Nov 16 00:19:35 2018
 
 
 import numpy as np
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 real = 7./6.
